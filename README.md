@@ -6,7 +6,7 @@ Overview
 During Week 1, I completed the initial Enterprise Data Discovery, Data Profiling, Relationship Analysis, Exploratory Data Analysis, KPI Foundation, SQL/DuckDB Query Development, Dashboard Discovery, and Data-Quality Assessment across the five core datasets:
 
 •	Customers
-•	Transactions
+•	Transactions  
 •	Products
 •	Customer Support
 •	Marketing Campaigns
