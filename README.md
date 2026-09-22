@@ -347,7 +347,7 @@ The findings from Week 1 will be used to support Week 2 activities, including:
 •	Marketing performance analysis.
 •	Improved data-quality controls.
 
-
+----------------------------------------------------------------------------------------------------------------------------
 
 # Week 2 
 
@@ -891,4 +891,525 @@ Advanced Analytics & ML Foundation
 
 This Week 2
 
+# Week 3 — Deep Customer Analytics, Retention & LTV Intelligence
+
+## Overview
+
+During Week 3, I developed a deeper customer analytics layer focused on **retention, customer lifetime value (LTV), lifecycle segmentation, cohort analysis, regional retention, customer risk, product affinity, and retention opportunities**.
+
+The analysis extended the Week 2 customer feature foundation and transformed it into a customer-level intelligence layer suitable for business decision-making and future ML use cases.
+
+The major areas covered were:
+
+- Customer Retention & LTV Intelligence
+- Customer Lifecycle Segmentation
+- Cohort Retention Analysis
+- Regional Retention Analysis
+- High-Value Customer Risk Analysis
+- Retention & LTV Dashboard
+- SQL Business Query Expansion
+- ML Risk Reconciliation
+- Customer Risk Analysis
+- Retention Opportunity Analysis
+- Product & Customer Affinity
+- Next-Best-Action Data Preparation
+- Executive Retention Story
+
+----------------------------------------------------------------------------------------
+week 3-
+
+
+# Retention & LTV Intelligence
+Developed a customer-level analytical layer focused on understanding customer value and retention behaviour.
+
+## Customer Value & Retention Metrics
+
+Analyzed and created features for:
+
+- Customer lifetime revenue.
+- Customer tenure.
+- Total orders.
+- Purchase frequency.
+- Purchase recency.
+- Average Order Value.
+- Repeat purchase behaviour.
+- Product-category diversity.
+- Return behaviour.
+- Discount behaviour.
+- Customer support interactions.
+- Campaign interactions where available.
+
+## Customer-Level Analytical Table
+
+Created a customer-level feature table containing the major retention and LTV metrics.
+
+The table provides a consolidated view of:
+
+```text
+Customer
+   ↓
+Purchase Behaviour
+   ↓
+Customer Value
+   ↓
+Engagement
+   ↓
+Retention Behaviour
+   ↓
+Risk Indicators
+```
+
+This table was designed to support retention analysis, customer segmentation, risk identification, and future machine-learning activities.
+
+# Customer Lifecycle Segmentation
+Expanded the Week 2 customer segmentation into a detailed lifecycle view.
+
+## Customer Segments
+Customers with high business value and significant revenue contribution based on the documented segmentation methodology.
+
+### Regular
+Customers demonstrating established and relatively consistent purchasing activity.
+
+### Occasional
+Customers with comparatively limited purchase activity.
+
+### Dormant
+Customers showing prolonged inactivity based on the documented recency/inactivity threshold.
+
+## Segmentation Methodology
+The segmentation methodology was documented using measurable customer attributes such as:
+
+- Revenue.
+- Order count.
+- Purchase recency.
+- Purchase frequency.
+- Customer activity.
+- Business value.
+
+The thresholds were defined using the project's documented business rules rather than assigning labels arbitrarily.
+
+## Segment Analysis
+For each segment, analyzed:
+
+- Number of customers.
+- Revenue contribution.
+- Regional distribution.
+- Average LTV.
+- Average purchase recency.
+- Purchase behaviour.
+- Customer activity.
+
+This provided a clearer understanding of the composition and value of each customer lifecycle group.
+
+
+# Retention Cohort Analysis
+Performed cohort analysis using customer signup or first-purchase date where supported by the available data.
+
+## Retention Periods
+
+Analyzed:
+
+- Month 0 retention.
+- Month 1 retention.
+- Month 2 retention.
+- Month 3 retention.
+- Longer-term retention where sufficient data was available.
+
+## Cohort Outputs
+Created:
+
+- Cohort retention table.
+- Retention percentages by cohort.
+- Retention curve.
+- Cohort comparison analysis.
+
+The analysis was used to compare retention behaviour across different customer acquisition/first-purchase cohorts and identify differences in longer-term customer engagement.
+
+# Regional Retention Analysis
+Conducted regional customer-retention analysis.
+
+For each region, calculated and analyzed:
+
+- Customer count.
+- Revenue.
+- Average Order Value.
+- Repeat Purchase Rate.
+- Dormant Customer Rate.
+- Attrition Proxy Rate.
+- Average LTV.
+- High-value customer count.
+
+## Regional Analysis
+Regional performance was compared across customer value, retention, activity, and risk indicators.
+
+The analysis helped identify:
+
+- Regions with stronger customer retention and value.
+- Regions with higher inactivity or attrition-proxy levels.
+- Regions containing significant high-value customer populations.
+- Areas requiring additional business investigation.
+
+An executive summary was prepared to explain the observed differences using the available evidence.
+
+# High-Value Customer Risk Analysis
+Combined customer value and customer activity/risk indicators to identify strategically important customer populations.
+
+A major focus was:
+
+text
+High LTV + High Attrition Risk
+
+## Priority Populations
+
+### Priority 1
+
+**High LTV + High Risk**
+High-value customers showing strong indicators of inactivity or attrition risk.
+
+### Priority 2
+
+**High LTV + Medium Risk**
+High-value customers showing moderate risk indicators.
+
+### Priority 3
+
+**Medium LTV + High Risk**
+Customers with meaningful business value and elevated risk indicators.
+
+The thresholds were based on the team's documented business definitions.
+
+This analysis created a prioritized customer population for retention investigation.
+
+# DA-06 — Retention & LTV Cockpit
+Developed the second major analytical dashboard: **Retention & LTV Cockpit**.
+
+## Executive KPIs
+The dashboard included:
+
+- Total Customers.
+- Average LTV.
+- Repeat Purchase Rate.
+- Dormant Customer Rate.
+- Attrition Risk Rate.
+- High-Value Customer Count.
+
+## Customer Segmentation
+Analyzed:
+
+- Premium.
+- Regular.
+- Occasional.
+- Dormant.
+
+## Retention Analysis
+Included:
+
+- Cohort retention.
+- Retention trend.
+- Regional retention.
+- Customer lifecycle analysis.
+
+## Risk Analysis
+Included:
+
+- High-risk customers.
+- High-risk regions.
+- High-value/high-risk customers.
+- Customer risk distribution.
+
+## LTV Analysis
+Included:
+
+- LTV distribution.
+- LTV by region.
+- LTV by customer segment.
+- Top customers by LTV.
+
+The dashboard was designed to move from executive-level KPIs to customer-level investigation.
+
+# SQL Query Bank Expansion
+Expanded the SQL business query library to **20+ reusable analytical queries**.
+
+## Retention Queries
+Included queries for:
+
+- Cohort retention.
+- Dormant customers.
+- Repeat customers.
+- Retention by region.
+- Retention by customer segment.
+
+## LTV Queries
+Included:
+
+- Customer lifetime revenue.
+- Average LTV.
+- LTV by region.
+- LTV by customer segment.
+- Top customers by LTV.
+
+## Risk Queries
+Included:
+
+- High-risk customers.
+- High-value/high-risk customers.
+- Risk by region.
+- Risk by customer segment.
+
+## Behavioral Intelligence Queries
+Included:
+
+- Purchase frequency.
+- Product diversity.
+- Discount behaviour.
+- Return behaviour.
+- Support interaction patterns.
+
+The SQL query bank was designed to remain readable, reusable, and compatible with the project's SQL/DuckDB analytical 
+
+# ML Risk Reconciliation
+Performed analytical validation of the ML-generated customer risk outputs provided by the ML track.
+
+The objective was to compare model-generated risk indicators against observed customer behaviour.
+
+## Comparisons Performed
+
+Analyzed:
+
+- ML Risk Score versus actual customer behaviour.
+- High-risk customers with recent purchases.
+- Low-risk customers with prolonged inactivity.
+- High-value customers receiving high-risk scores.
+- Segment-level risk distribution.
+- Regional risk distribution.
+
+## Validation Focus
+The analysis did not attempt to prove that the ML model was correct or incorrect.
+
+Instead, it investigated:
+
+- Areas of agreement.
+- Areas of disagreement.
+- Unexpected patterns.
+- Potential data-quality issues.
+- Potential model limitations.
+- Customer segments requiring further investigation.
+
+This provided a business-oriented reconciliation layer between model output and observed customer behaviour.
+
+# Customer Risk Dashboard
+Created an analytical view focused specifically on customer risk.
+
+## Dashboard Components
+Included:
+
+- Risk distribution.
+- Risk by region.
+- Risk by customer segment.
+- Risk by LTV.
+- High-value/high-risk customers.
+- Risk-factor analysis.
+- Customer-level drill-down.
+
+## Investigation Flow
+The dashboard was designed around:
+
+text
+Risk KPI
+   ↓
+Region
+   ↓
+Customer Segment
+   ↓
+Customer
+   ↓
+Customer-Level Details
+```
+
+This allowed management users to investigate the customer populations contributing to observed risk levels.
+
+
+# Customer Retention Opportunity Analysis
+Identified actionable customer-retention opportunities based on customer value, activity, and behavioural signals.
+
+## Opportunity Areas
+
+### Opportunity A — High-LTV Customers
+Identified high-LTV customers showing increasing purchase recency or reduced recent activity.
+
+### Opportunity B — Premium Customers
+Analyzed Premium customers showing declining purchase frequency.
+
+### Opportunity C — Dormant High-Value Customers
+Identified dormant customers with historically significant revenue contribution.
+
+### Opportunity D — Regional Risk
+Identified regions containing high-value customers alongside elevated attrition-risk indicators.
+
+## Opportunity Framework
+Each opportunity was documented using:
+
+text
+Customer Group
+      ↓
+Evidence
+      ↓
+Risk / Opportunity
+      ↓
+Recommended Business Action
+```
+
+Recommendations were based on observed customer behaviour rather than generic retention statements.
+
+# Product & Customer Affinity Analysis
+Investigated relationships between customers and products/categories.
+
+## Analysis Performed
+Analyzed:
+
+- Most frequently purchased categories.
+- Categories associated with high-LTV customers.
+- Categories associated with repeat purchases.
+- Category preferences by customer segment.
+- Category behaviour among high-risk customers.
+
+The analysis was used to understand customer-product relationships and provide supporting signals for future recommendation modelling.
+
+# Next-Best-Action Data Preparation
+Prepared analytical features that can support future customer recommendation and next-best-action modelling.
+
+## Features Prepared / Investigated
+
+- Customer segment.
+- Purchase history.
+- Product category.
+- Last purchase date.
+- Purchase frequency.
+- Lifetime value.
+- Discount behaviour.
+- Return behaviour.
+- Campaign interaction.
+- Support history.
+
+The features were documented to support future ML and recommendation activities.
+
+The analytical structure provides a foundation for potential use cases such as:
+
+- Retention offers.
+- Re-engagement.
+- Product recommendations.
+- Upselling.
+- Cross-selling.
+- Customer-service interventions.
+
+# Executive Retention Story
+Prepared a Week 3 executive-level retention and customer-value story.
+
+## Customer Value
+Analyzed which customer segments and individual customers generate the greatest business value based on lifetime revenue, purchase behaviour, and LTV-related metrics.
+
+## Retention
+Analyzed customer activity, recency, repeat behaviour, dormant populations, and cohort retention to identify areas where retention requires attention.
+
+## Risk
+Identified customer groups with elevated attrition-risk indicators, particularly high-value customers with high risk.
+
+## Regional Risk
+Compared regional customer value and retention indicators to identify regions requiring further management attention.
+
+## Opportunity
+Prioritized customer populations based on the combination of:
+
+- Customer value.
+- Purchase activity.
+- Recency.
+- Attrition risk.
+- Segment.
+- Regional characteristics.
+
+## Recommendation
+
+Developed evidence-based recommendations using:
+
+text
+Business Problem
+      ↓
+Supporting Evidence
+      ↓
+Business Impact
+      ↓
+Recommended Action
+```
+
+The recommendations were designed to be specific to the observed customer behaviour rather than generic statements such as "improve customer retention."
+
+
+
+# Week 3 Key Deliverables
+
+The following analytical deliverables were completed during Week 3:
+
+- Customer-level Retention & LTV analytical table.
+- Customer lifetime revenue analysis.
+- Customer tenure analysis.
+- Purchase frequency and recency analysis.
+- Repeat-purchase analysis.
+- Product diversity analysis.
+- Return and discount behaviour analysis.
+- Support interaction analysis.
+- Detailed customer lifecycle segmentation.
+- Segment-level value and retention analysis.
+- Cohort retention analysis.
+- Regional retention analysis.
+- High-value/high-risk customer analysis.
+- Retention & LTV Cockpit.
+- 20+ SQL business queries.
+- ML risk reconciliation.
+- Customer Risk Dashboard.
+- Customer retention opportunity analysis.
+- Product/customer affinity analysis.
+- Next-best-action feature preparation.
+- Executive Retention Story.
+
+---
+
+# Week 3 Analytical Flow
+
+```text
+Customer & Transaction Data
+            ↓
+Customer-Level Features
+            ↓
+Retention & LTV Metrics
+            ↓
+Lifecycle Segmentation
+            ↓
+Cohort & Regional Analysis
+            ↓
+Customer Risk Analysis
+            ↓
+High-Value / High-Risk Identification
+            ↓
+Retention Opportunities
+            ↓
+Dashboard & Executive Insights
+            ↓
+ML / Recommendation Foundation
+```
+
+# Week 3 Outcome
+
+Week 3 expanded the VANTAGE360 analytical foundation from revenue and KPI reporting into **deeper customer intelligence**.
+
+The completed work established a structured analytical layer for understanding:
+
+- Who the highest-value customers are.
+- How customers behave across their lifecycle.
+- Which customers show signs of disengagement.
+- How retention differs across cohorts and regions.
+- Which high-value customers require closer attention.
+- Which products and categories are associated with customer behaviour.
+- Which customer features can support future ML and recommendation use cases.
+
+This analytical foundation provides the basis for subsequent **predictive customer-risk modelling, recommendation systems, next-best-action strategies, and advanced customer decision support**.
 
