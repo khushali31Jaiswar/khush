@@ -348,3 +348,547 @@ The findings from Week 1 will be used to support Week 2 activities, including:
 •	Improved data-quality controls.
 
 
+
+# Week 2 
+
+## Overview
+
+During Week 2, I developed a reproducible data preparation and analytical workflow for the VANTAGE360 datasets. The work focused on transforming the raw enterprise datasets into standardized, governed, and analysis-ready data while establishing the foundation for customer intelligence, revenue analytics, KPI reporting, and dashboard development.
+
+The five core datasets used were:
+
+- Customers
+- Transactions
+- Products
+- Customer Support
+- Marketing Campaigns
+
+The completed work covered data cleaning, master analytical dataset creation, customer feature engineering, attrition analysis, KPI activation, SQL query development, return and discount analysis, campaign staging, dashboard development, validation, and executive insights.
+
+---
+
+#  Automated Data Cleaning Pipeline
+
+Developed a reproducible data-cleaning pipeline for the VANTAGE360 datasets.
+
+### Data Preparation Activities Completed
+
+- Identified missing values across all datasets.
+- Applied appropriate missing-value treatment based on field type and business meaning.
+- Detected duplicate records.
+- Handled duplicate records according to the relevant business identifiers.
+- Normalized data types.
+- Standardized date and time fields.
+- Validated currency and numerical fields.
+- Standardized categorical values.
+- Detected invalid transaction records.
+- Performed negative and zero-value checks where applicable.
+- Validated referential integrity.
+- Checked customer ID consistency.
+- Checked product ID consistency.
+- Validated transaction status values.
+- Standardized column names and formats.
+
+The pipeline was designed to be **reproducible and reusable**, avoiding manual spreadsheet-based data cleaning.
+
+### Output
+
+The cleaning workflow produces standardized datasets that can be directly consumed by SQL, Python, Power BI, and downstream analytical processes.
+
+---
+
+# Master Analytical Dataset
+
+Created a consolidated analytical data foundation by integrating the major business entities:
+
+- Customers
+- Transactions
+- Products
+- Customer Support
+- Marketing Campaigns
+
+The datasets were integrated using business relationships rather than simply concatenating the raw tables.
+
+### Documented Components
+
+- Dataset grain.
+- Primary identifiers.
+- Foreign-key relationships.
+- Join logic.
+- Aggregation logic.
+- Derived analytical fields.
+- Missing-value treatment.
+- Business assumptions.
+- Referential-integrity considerations.
+
+The resulting structure provides a foundation for customer-level, transaction-level, product-level, support-level, and campaign-level analysis.
+
+---
+
+# Customer Feature Foundation
+
+Created a customer-level analytical feature table to support customer intelligence, segmentation, retention analysis, and future ML activities.
+
+## Customer Activity Features
+
+Created or investigated:
+
+- Total orders.
+- Total revenue.
+- Average Order Value.
+- First purchase date.
+- Last purchase date.
+- Purchase frequency.
+- Days since last purchase.
+- Purchase recency.
+
+## Customer Value Features
+
+Created or investigated:
+
+- Lifetime revenue.
+- Average transaction value.
+- Revenue contribution.
+- Product-category diversity.
+- Purchase frequency.
+
+## Customer Engagement Features
+
+Integrated or analyzed:
+
+- Support interactions.
+- Campaign interactions where available.
+- Return behaviour.
+- Purchase recency.
+- Purchase consistency.
+
+## Customer Status
+
+Created business-oriented customer classifications:
+
+- Premium
+- Regular
+- Occasional
+- Dormant
+
+The segmentation logic was documented using measurable business rules rather than assigning segments without explanation.
+
+The customer feature table provides the foundation for retention analysis, customer profiling, LTV analysis, and future predictive modelling.
+
+---
+
+# Customer Attrition / Churn Proxy
+
+Developed a documented analytical proxy for customer attrition.
+
+### Factors Investigated
+
+- Last purchase recency.
+- Historical purchase frequency.
+- Customer tenure.
+- Order count.
+- Revenue history.
+- Return behaviour.
+- Support interactions.
+- Campaign engagement where available.
+
+A provisional inactivity/attrition rule was established for analytical purposes.
+
+### Documentation Included
+
+- Attrition proxy definition.
+- Threshold/rule used.
+- Business reasoning behind the threshold.
+- Limitations of the proxy.
+- Potential sources of false positives and false negatives.
+- Approach for converting the proxy into a future supervised ML target.
+
+The proxy is treated as an analytical indicator rather than a confirmed prediction of actual customer churn.
+
+---
+
+# Revenue Command Center Data Layer
+
+Prepared the analytical data required for the Revenue Command Center.
+
+### Revenue Analysis
+
+Analyzed:
+
+- Total revenue.
+- Revenue by region.
+- Revenue by product.
+- Revenue by product category.
+- Revenue by customer segment.
+- Revenue by channel where available.
+- Transaction volume.
+- Average Order Value.
+- Repeat purchase behaviour.
+- Return rate.
+- Discount impact.
+- Revenue contribution by customer segment.
+
+Major KPIs were linked back to governed SQL calculations to improve traceability and consistency between the analytical layer and dashboard layer.
+
+---
+
+# KPI Activation
+
+Implemented and validated the project's core business KPIs.
+
+## Core KPIs
+
+### Total Revenue
+Revenue generated from valid delivered transactions according to the agreed business rules.
+
+### Average Order Value
+Calculated using the defined revenue and valid order/transaction population.
+
+### Repeat Purchase Rate
+Percentage of customers who completed more than one qualifying purchase.
+
+### Return Rate
+Returned transactions divided by the relevant transaction population according to the defined business rule.
+
+### Attrition Risk Rate
+Percentage of customers meeting the documented inactivity/attrition proxy.
+
+### Customer Value
+Customer-level accumulated revenue supported by additional customer value metrics.
+
+### KPI Documentation
+
+Each KPI was documented with:
+
+- Definition.
+- SQL logic.
+- Source tables.
+- Required filters.
+- Analytical grain.
+- Validation result.
+- Business interpretation.
+- Relevant dependencies.
+
+This created a consistent KPI foundation for Power BI and executive reporting.
+
+---
+
+# SQL Query Bank
+Expanded the SQL/DuckDB query library to **15+ reusable business queries**.
+
+## Revenue Queries
+
+- Revenue by month.
+- Revenue by region.
+- Revenue by product.
+- Top customers by revenue.
+- Revenue contribution by customer segment.
+
+## Customer Queries
+
+- New customers.
+- Repeat customers.
+- Dormant customers.
+- Customer purchase frequency.
+- Customer lifetime value.
+
+## Transaction Queries
+
+- Average Order Value.
+- Return analysis.
+- Discount analysis.
+- High-value transactions.
+- Transaction trends.
+
+## Business Intelligence Queries
+
+- Regional performance.
+- Product performance.
+- Customer segment performance.
+- Campaign-related revenue where supported.
+- Support and customer-behaviour relationships.
+
+The SQL queries were written to be readable, reproducible, and compatible with the project's SQL/DuckDB environment.
+
+---
+
+# Return & Discount Analysis
+Conducted an analytical investigation into discounts, transaction outcomes, and return behaviour.
+
+### Analysis Performed
+
+- Discount distribution.
+- Discount by product.
+- Discount by customer segment.
+- Discount versus order value.
+- Discount versus return behaviour.
+- Revenue after discount.
+- High-discount customer groups.
+- Return patterns across relevant transaction groups.
+
+The analysis was used to identify business patterns and potential areas for management attention.
+
+No causal conclusions were made where the available observational data could only establish association.
+
+### Business Focus
+The analysis considered whether discounting appears to be associated with:
+
+- Higher transaction value.
+- Different customer segments.
+- Increased return behaviour.
+- Changes in revenue quality.
+
+---
+
+# Campaign Staging Dataset
+
+Prepared a clean campaign analysis dataset to support future marketing analytics.
+
+### Intended Analytical Uses
+
+- Campaign performance.
+- Customer targeting.
+- Campaign response.
+- Revenue attribution.
+- Customer segmentation.
+- Campaign ROI.
+
+### Relationship Analysis
+
+Documented the supported relationship:
+
+```text
+Customer
+   ↓
+Campaign
+   ↓
+Transaction
+   ↓
+Revenue
+```
+
+Where direct attribution was not fully supported by the available identifiers, the limitation was documented rather than assuming an unsupported relationship.
+
+---
+
+# Dashboard — Revenue Command Center v1
+Developed the first analytical version of the **Revenue Command Center**.
+
+## Executive KPI Strip
+
+Included:
+
+- Revenue.
+- Average Order Value.
+- Orders.
+- Repeat Purchase Rate.
+- Return Rate.
+- Customer Count.
+
+## Revenue Analysis
+
+Included:
+
+- Revenue trend.
+- Regional revenue.
+- Product/category revenue.
+- Segment revenue.
+
+## Customer Analysis
+
+Included:
+
+- Premium customers.
+- Regular customers.
+- Occasional customers.
+- Dormant customers.
+
+## Transaction Analysis
+
+Included:
+
+- Returns.
+- Discounts.
+- Order trends.
+
+The dashboard was structured to clearly distinguish between:
+
+- KPI
+- Trend
+- Breakdown
+- Business Insight
+
+This allowed users to move from high-level performance monitoring to more detailed analytical investigation.
+
+---
+
+# Dashboard Drill-Through
+
+Implemented drill-through functionality where technically supported.
+
+The intended analytical flow was:
+
+```text
+Executive KPI
+      ↓
+Segment
+      ↓
+Customer / Product / Region
+      ↓
+Detailed Record
+```
+
+This design allows users to investigate the underlying drivers of KPI movements rather than using the dashboard only as a visual reporting tool.
+
+---
+
+# Analytical Validation
+
+Performed reconciliation between:
+
+- Source datasets.
+- Cleaned datasets.
+- SQL outputs.
+- Dashboard outputs.
+
+### Validation Process
+Important KPI values were independently checked between the different analytical layers.
+
+The validation covered metrics such as:
+
+- Revenue.
+- Orders.
+- Customer count.
+- Average Order Value.
+- Repeat Purchase Rate.
+- Return Rate.
+- Segment-level revenue.
+- Regional revenue.
+- Customer-level revenue.
+- Other major dashboard KPIs.
+
+At least **10 important KPI values were reconciled**.
+
+Any identified discrepancies were investigated and documented based on differences in:
+
+- Filters.
+- Transaction status.
+- Data cleaning.
+- Aggregation logic.
+- Missing values.
+- Join behaviour.
+- KPI definitions.
+
+This validation helped ensure consistency between the data layer, SQL calculations, and dashboard outputs.
+
+---
+
+#Executive Insight Brief
+Prepared an executive-level analytical summary based on the completed analysis.
+
+## Revenue
+Reviewed overall revenue performance, revenue trends, regional contribution, product/category contribution, and customer-segment contribution.
+
+## Customers
+Analyzed customer segments and identified the customer groups contributing the largest share of business value based on revenue and purchase behaviour.
+
+## Retention
+Used purchase recency, order frequency, customer activity, and the attrition proxy to identify customer groups showing signs of reduced engagement or inactivity.
+
+## Products
+Analyzed product and category-level transaction activity and revenue contribution to identify stronger and weaker-performing areas.
+
+## Regions
+Compared regional revenue and customer activity to identify regions requiring additional investigation or management attention.
+
+## Business Recommendations
+Recommendations were structured using:
+
+```text
+Problem
+   ↓
+Evidence
+   ↓
+Business Impact
+   ↓
+Recommended Action
+```
+
+Recommendations were based on observed data patterns rather than generic statements.
+
+Examples of analytical recommendation areas included:
+
+- Targeted re-engagement of inactive customer groups.
+- Segment-specific retention strategies.
+- Investigation of high-return product/category patterns.
+- Review of high-discount customer groups.
+- Regional performance monitoring.
+- Further investigation of campaign-to-revenue relationships.
+- Improvement of support processes where response-time or CSAT patterns indicate potential service issues.
+
+---
+
+# Week 2 Key Deliverables
+
+The following deliverables were completed during Week 2:
+
+- Automated/reproducible data-cleaning pipeline.
+- Standardized analytical datasets.
+- Master Analytical Dataset.
+- Customer Feature Foundation.
+- Customer segmentation.
+- Customer attrition/churn proxy.
+- Revenue Command Center data layer.
+- Core KPI activation.
+- 15+ SQL/DuckDB business queries.
+- Return and discount analysis.
+- Campaign staging dataset.
+- Revenue Command Center v1 dashboard.
+- Dashboard drill-through structure.
+- KPI reconciliation and validation.
+- Executive Insight Brief.
+
+---
+
+# Week 2 Outcome
+
+Week 2 transformed the raw enterprise data foundation established during Week 1 into a more **standardized, governed, and business-ready analytical environment**.
+
+The completed work established the foundation for subsequent activities involving:
+
+- Advanced customer analytics.
+- Customer retention and LTV analysis.
+- Predictive modelling.
+- ML-based customer risk analysis.
+- Campaign intelligence.
+- Advanced Power BI dashboards.
+- Next-best-action recommendations.
+- Deeper executive decision support.
+
+The overall workflow follows:
+
+```text
+Raw Enterprise Data
+        ↓
+Data Cleaning & Validation
+        ↓
+Standardized Datasets
+        ↓
+Master Analytical Dataset
+        ↓
+Customer Feature Foundation
+        ↓
+KPI Activation & SQL Validation
+        ↓
+Business Analysis
+        ↓
+Revenue Command Center
+        ↓
+Executive Insights
+        ↓
+Advanced Analytics & ML Foundation
+```
+
+This Week 2
+
+
